@@ -100,85 +100,29 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.4.0/css/lightgallery.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.4.0/js/lightgallery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/js/lightgallery-all.min.js"></script>
 
 
 <h2>Water conservation during car wash</h2>
 <div style="display:none;" id="video1">
-  <video class="lg-video-object lg-html5" controls="" preload="none">
-    <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video1.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-</div>
-<div style="display:none;" id="video2">
-  <video class="lg-video-object lg-html5" controls="" preload="none">
-    <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video2.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-</div>
-<div style="display:none;" id="video3">
-  <video class="lg-video-object lg-html5" controls="" preload="none">
-    <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video3.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-</div>
-<div style="display:none;" id="video4">
-  <video class="lg-video-object lg-html5" controls="" preload="none">
-    <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video4.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+    <video class="lg-video-object lg-html5" controls preload="none">
+        <source src="https://sachinchoolur.github.io/lightGallery/static/videos/video4.mp4" type="video/mp4">
+         Your browser does not support HTML5 video.
+    </video>
 </div>
 
-<div class="cont">
-  <div class="page-head">
-    <h1>jQuery lightgallery</h1>
-    <p class="lead">A lightweight, customizable, modular, responsive, lightbox gallery plugin for jQuery.</p><a href="https://github.com/sachinchoolur/lightGallery" class="btn btn-primary btn-lg">View on github</a></div>
+<ul id="html5-videos">
+  <li data-sub-html="video caption1" data-html="#video1" >
+      <img src="https://sachinchoolur.github.io/lightGallery/static/img/videos/h-video3-poster.jpg" />
+  </li>
 
-  <div class="demo-gallery">
-    <ul id="lightgallery">
-      <li class="video" data-html="#video2"
-       data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/y-video1-cover.jpg">
-        <a href="">
-          <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-y-1.jpg">
-          <div class="demo-gallery-poster">
-            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-          </div>
-        </a>
-      </li>
-      <li class="video" data-html="#video1"
-       data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/y-video2-cover.jpg">
-        <a href="">
-          <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-y-2.jpg">
-          <div class="demo-gallery-poster">
-            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-          </div>
-        </a>
-      </li>
-      <li class="video" data-html="#video3"
-       data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/v-video1-cover.jpg">
-        <a href="">
-          <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-v-1.jpg">
-          <div class="demo-gallery-poster">
-            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-          </div>
-        </a>
-      </li>
-      <li class="video" data-html="#video4"
-       data-poster="https://sachinchoolur.github.io/lightGallery/static/img/videos/v-video2-cover.jpg">
-        <a href="">
-          <img class="img-responsive" src="https://sachinchoolur.github.io/lightGallery/static/img/thumb-v-v-2.jpg">
-          <div class="demo-gallery-poster">
-            <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-          </div>
-        </a>
-      </li>
-    </ul>
-    <span class="small">Click on any of the images to see lightGallery</span>
-  </div>
-</div>
+</ul>
 <script>
 $(document).ready(function() {
-  $('#lightgallery').lightGallery(); 
+  $('#html5-videos').lightGallery({
+    controls: true,
+    autoplay: true,
+  });
 });
 </script>
 
