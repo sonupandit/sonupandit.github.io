@@ -17,7 +17,15 @@
 <a data-fancybox data-type="ajax" data-src="ajax.html" href="javascript:;">
 	AJAX content
 </a>
-  
+
+	<script>
+	$("[data-fancybox]").fancybox({
+	afterShow : function( instance, current ) {
+		console.info( instance );
+	}
+});	
+	</script>
+	
   
 </body>
 </html>
