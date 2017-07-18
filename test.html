@@ -22,6 +22,11 @@
 	$("[data-fancybox]").fancybox({
 	afterShow : function( instance, current ) {
 		console.info( instance );
+		console.info( "hello after" );
+	},
+		beforeShow : function( instance, current ) {
+		
+		console.info( "hello before" );
 	}
 });	
 	</script>
