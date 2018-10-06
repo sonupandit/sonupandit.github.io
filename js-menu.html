@@ -2,88 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Menu</title>
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Menu</title>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-    body{
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
       overflow-x: hidden;
     }
-      .section{
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        /*display: none;*/
-      }
-      .table{
-        display: table;
-        height: 100%;
-        margin-bottom: 0;
-      }
-      .row{
-        display: table-cell;
-        vertical-align: middle;
-      }
+
+    .section {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      /*display: none;*/
+    }
+
+    .table {
+      display: table;
+      height: 100%;
+      margin-bottom: 0;
+    }
+
+    .row {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
 
-      .section.home{
-        background: #DC2424; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #DC2424 , #4A569D); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #DC2424 , #4A569D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      }
+    .section.home {
+      background: #DC2424;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #DC2424, #4A569D);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #DC2424, #4A569D);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
 
-        .section.about{
-        background: #7474BF; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #7474BF , #348AC7); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #7474BF , #348AC7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        }
+    .section.about {
+      background: #7474BF;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #7474BF, #348AC7);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #7474BF, #348AC7);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
 
-        .section.projects{
-          background: #7474BF; /* fallback for old browsers */
-          background: -webkit-linear-gradient(to left, #7474BF , #348AC7); /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to left, #7474BF , #348AC7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        }
-      *{
-        color: #fff;
-      }
+    .section.projects {
+      background: #7474BF;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #7474BF, #348AC7);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #7474BF, #348AC7);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
 
-      .menu{
-        background: #4A569D;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-      }
+    * {
+      color: #fff;
+    }
 
-      .menu a{
-        color: #fff;font-size: 16px;
-        display: block;
-        padding: 7px 16px;
-        background: rgba(255, 255, 255, 0.5);
-        text-decoration: none!important;
-      }
+    .menu {
+      background: #4A569D;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999;
+    }
 
-      .menu li{
-        display: inline-block;
-      }
+    .menu a {
+      color: #fff;
+      font-size: 16px;
+      display: block;
+      padding: 7px 16px;
+      background: rgba(255, 255, 255, 0.5);
+      text-decoration: none !important;
+    }
 
-      .menu li.active-nav a{
-        background: rgba(135, 75, 255, 0.5);
-      }
+    .menu li {
+      display: inline-block;
+    }
 
-    </style>
+    .menu li.active-nav a {
+      background: rgba(135, 75, 255, 0.5);
+    }
+  </style>
 </head>
 
 <body>
@@ -136,35 +149,35 @@
 
 
   <script>
-     $(document).ready(function(){
+    $(document).ready(function () {
+         var $this = $(this);
+      var tl = new TimelineMax();
+      tl.set(".section:not('.current')", { scale: 0.9, x: "100%" });
 
-        var tl = new TimelineMax();
-        tl.set(".section:not('.current')",{scale:0.9, x:"100%"});
-
-       $(".menu a").click(function(e){
-           e.preventDefault();
-        if(!tl.isActive()){
+      $(".menu a").click(function (e) {
+        e.preventDefault();
+        if (!tl.isActive()) {
 
 
           $(this).parent().addClass("active-nav").siblings().removeClass("active-nav");
 
           var $sec = $(this).attr("href");
-         if(!$($sec).hasClass("current")){
-           tl.to(".section.current", 0.5, {scale:.9, ease:Power2.easeOut});
-           tl.to(".section.current", 0.5, {x:"-100%", ease:Power0.easeNone});
-           tl.set(".section.current", {x:"100%", scale:.9, className:'-=current'});
+          if (!$($sec).hasClass("current")) {
+            tl.to(".section.current", 0.5, { scale: .9, ease: Power2.easeOut });
+            tl.to(".section.current", 0.5, { x: "-100%", ease: Power0.easeNone });
+            tl.set(".section.current", { x: "100%", scale: .9, className: '-=current' });
 
-           tl.to($sec, 0.5, { x:"0%", ease:Power0.easeNone}, "-=0.5");
-           tl.to($sec, 0.5, {scale:1, ease:Power2.easeIn, className:'+=current'});
-         }
+            tl.to($sec, 0.5, { x: "0%", ease: Power0.easeNone }, "-=0.5");
+            tl.to($sec, 0.5, { scale: 1, ease: Power2.easeIn, className: '+=current' });
+          }
 
 
 
-         }
+        }
 
-       });
+      });
 
-     });
+    });
 
 
 
