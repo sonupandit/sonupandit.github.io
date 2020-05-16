@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+body{
+    color: #333;
+    font-size: 18px;
+    line-height: 2;
+    font-family: 'Muli', sans-serif;
+}
+
+h2 ~ h2{
+   margin-top: 60px;
+}
