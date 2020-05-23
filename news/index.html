@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Games Season 1</title>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="wordbox">
+        <div class="row">
+            <div class="col-auto pr-0">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="news-list">
+            <li>
+                <h2></h2>
+
+            </li>
+        </ul>
+    </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var url = "http://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
+
+        // $.ajax({url: url, success: function(result){
+        //     console.log(result)
+        // }});
+
+        var news = fetch(url,{ mode: 'no-cors' })
+            .then(response => response.json())
+            .then(data => console.log(data));
+    });
+</script>
+
+</body>
+</html>
+
