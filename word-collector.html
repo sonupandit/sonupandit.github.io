@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Games Season 1</title>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./app.js"></script>
+</head>
+<body>
+  <div class="container" style="max-width: 400px;">
+      <form action="#">
+        <div class="form-group">
+          <label for="">Word</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Meaning</label>
+            <input type="text" class="form-control">
+        </div>
+        <button type="button" class="btn btn-success">Save</button>
+      </form>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script> -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDJNXr3jeCcoX0HOzOcMfOuVTwonsDKGl4",
+    authDomain: "wordmeaning-b0002.firebaseapp.com",
+    databaseURL: "https://wordmeaning-b0002.firebaseio.com",
+    projectId: "wordmeaning-b0002",
+    storageBucket: "wordmeaning-b0002.appspot.com",
+    messagingSenderId: "985586546093",
+    appId: "1:985586546093:web:063c6c96ac7a78c7cbdd24",
+    measurementId: "G-HVPTTGKH1Z"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // firebase.analytics();
+
+document.addEventListener("DOMContentLoaded", function(){
+      // Get a reference to the database service
+  var database = firebase;
+
+  console.log(database);
+});
+</script>
+</body>
+</html>
