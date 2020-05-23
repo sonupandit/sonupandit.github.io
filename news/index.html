@@ -32,13 +32,13 @@
 <script>
     document.addEventListener("DOMContentLoaded", function(){
 
-        var url = "http://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
+        var url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
 
         // $.ajax({url: url, success: function(result){
         //     console.log(result)
         // }});
 
-        var news = fetch(url,{ mode: 'no-cors' })
+            fetch(url,{ mode: 'no-cors' })
             .then(response => response.json())
             .then(data => console.log(data));
     });
