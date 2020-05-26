@@ -3,44 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred Games Season 1</title>   
+    <title>Latest News</title>   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <style>
+        body{
+            padding-top: 100px;
+        }
+        .wordbox{
+            color: #fff;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 9999;
+        }
+        .bg-primary{
+            background-color: #3f51b5 !important;
+        }
+        .red{
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
-    <div class="wordbox">
-        <div class="row">
-            <div class="col-auto pr-0">
-
+    <div class="container-fluid wordbox bg-primary" >
+        <div class="row flex-nowarp justify-content-center align-items-center" style="height:70px;">
+            <div class="col-6">
+                <div class="word-name text-right">
+                    
+                </div>
             </div>
-            <div class="col">
-
+            <div class="col-6">
+                <div class="word-meaning">
+                    
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <ul class="news-list">
-            <li>
-                <h2></h2>
-
-            </li>
+        <ul class="news-list list-unstyled m-0">
+            
         </ul>
     </div>
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function(){   
+        String.prototype.capitalizeFirstLetter = function capitalizeFirstLetter() { 
+             return this.charAt(0).toUpperCase() + this.slice(1);
+        }    
+        var link = "https://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
 
-        var url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 
-        // $.ajax({url: url, success: function(result){
-        //     console.log(result)
-        // }});
+        const url = `${proxyUrl}${link}`;
+        const request = new Request(url);
 
-            fetch(url,{ mode: 'no-cors' })
-            .then(response => response.json())
-            .then(data => console.log(data));
+        fetch(request)
+        .then(response => response.json())
+        .then((news) => { 
+            console.log(news.articles)          
+            $.each(news.articles, function(i, val){
+                console.log(val);
+                var newsCard = `
+                <li class="mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${val.title}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${val.source.name}</h6>
+                            <p>${val.description}</p>
+                            <a href="${val.url}" class="card-link" traget="_blank">Read More...</a>
+                        </div>
+                    </div>
+                </li>
+                `;
+                $(".news-list").append(newsCard);
+            });
+        })
+        .then(function(){
+            $(".card-title,p").lettering('words');
+        })
+        .then(function(){
+            $("span").on("click", function(){
+                $("span").addClass("red");
+                $(this).addClass("red");
+                var txt = $(this).text();
+                $(".word-name").text(txt.capitalizeFirstLetter());
+                const req = new Request(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20200525T125236Z.2ee3c7ee706cdb9c.abec9ea855739ed0979877e3e5865d97a21b14be&text=${txt}&lang=en-hi&[format=plain`);
+
+                fetch(req)               
+                .then(response => response.json())
+                .then((data) => {
+                    console.log(data);
+                    $(".word-meaning").text(data.text[0])
+                })
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+            
     });
 </script>
 
