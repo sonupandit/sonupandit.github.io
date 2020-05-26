@@ -87,7 +87,7 @@
         })
         .then(function(){
             $("span").on("click", function(){
-                $("span").addClass("red");
+                $("span").removeClass("red");
                 $(this).addClass("red");
                 var txt = $(this).text();
                 $(".word-name").text(txt.capitalizeFirstLetter());
