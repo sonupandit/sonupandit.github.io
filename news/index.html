@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred Games Season 1</title>   
+    <title>Latest News</title>   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
@@ -30,17 +30,23 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function(){       
+        var link = "https://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
 
-        var url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=9369a97d517f402a861113ad495f92a4";
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 
-        // $.ajax({url: url, success: function(result){
-        //     console.log(result)
-        // }});
+        const url = `${proxyUrl}${link}`;
+        const request = new Request(url);
 
-            fetch(url)
-            .then(response => response.json())
-            .then(data => console.log(data));
+        fetch(request)
+        .then(response => response.json())
+        .then((news) => {
+            console.log(news);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+            
     });
 </script>
 
