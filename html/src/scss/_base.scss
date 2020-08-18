@@ -1,0 +1,167 @@
+
+::selection {
+    color: $white;
+    background: $primary;
+}
+
+::-webkit-input-placeholder {
+    color: $placeholderColor !important;
+}
+
+:-moz-placeholder {
+    color: $placeholderColor !important;
+}
+
+::-moz-placeholder {
+    color: $placeholderColor !important;
+}
+
+:-ms-input-placeholder {
+    color: $placeholderColor !important;
+}
+
+.p-white {
+    &::-webkit-input-placeholder {
+        color: $white !important;
+    }
+    &:-moz-placeholder {
+        color: $white !important;
+    }
+    &::-moz-placeholder {
+        color: $white !important;
+    }
+    &:-ms-input-placeholder {
+        color: $white !important;
+    }
+}
+
+a {
+    color: $primary;
+    outline: none !important;
+    &:hover {
+        color: lighten($primary, 15%);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {   
+    font-weight: normal;
+}
+
+h1,
+.h1 {
+    font-size: $h1Size;
+}
+
+h2,
+.h2 {
+    font-size: $h2Size;
+}
+
+h3,
+.h3 {
+    font-size: $h3Size;
+}
+
+p {
+    margin-bottom: 20px;    
+    &:last-of-type{
+        margin: 0;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+.btn{
+    color: $accent2 !important;
+    border-radius: 0;
+    outline: none;
+    box-shadow: 0;
+    border: 0;     
+    font-size: 12px;
+    border-radius: 0;
+    box-shadow: none !important;      
+    font-weight: 500;
+    padding: 6px 15px;
+    letter-spacing: 0.1em;
+    transition: all 0.3s; 
+    &.btn-secondary{
+        background-color: $secondary !important;
+        color: #18126a !important;
+        &:hover{
+            background-color: darken($secondary, 5%) !important;
+        }
+    }
+    &.btn-dark{
+        color: $white !important;
+        background-color: $darkGray !important;        
+        &:hover{
+            background-color: darken($darkGray, 10%) !important;
+        }
+    }
+}
+
+.bg-dark{
+  background-color: #222831 !important;
+}
+
+
+body {
+    font-family: $bodyFontFamily;
+    font-size: $bodyFontSize;
+    font-size: $bodyFontSize;
+    line-height: $bodyLineHeight;
+    overflow-x: hidden;
+    color: $bodyTextColor;  
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.header-main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;    
+    z-index: 1;
+}
+
+.brand{
+    width: 310px;
+    display: inline-block;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.social-links{
+    margin: 0 -9px;
+    li{
+        padding: 0 9px;
+        a{
+           display: flex;
+           font-size: 30px;
+           color: $primaryDark;
+           background-color: $primary;
+           line-height: 1;
+           text-decoration: none;
+           transition: all 0.3s;
+           &:hover{
+            background-color: #577eaf;
+           }
+        }
+    }
+}
+
+.header-outer{
+    padding: 35px 0 20px;
+    border-bottom: 2px solid $secondary;
+}
