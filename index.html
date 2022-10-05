@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum: Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="app.css">
+    <script src="https://kit.fontawesome.com/4876512906.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var lFollowX = 0,
+                lFollowY = 0,
+                x = 0,
+                y = 0,
+                friction = 1 / 30;
+
+            function moveBackground() {
+            x += (lFollowX - x) * friction;
+            y += (lFollowY - y) * friction;
+            
+            translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+            $('.bg').css({
+                '-webit-transform': translate,
+                '-moz-transform': translate,
+                'transform': translate
+            });
+
+            window.requestAnimationFrame(moveBackground);
+            }
+
+            $(window).on('mousemove click', function(e) {
+
+            var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+            var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+            lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+            lFollowY = (10 * lMouseY) / 100;
+
+            });
+
+            moveBackground();
+        });
+    </script>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="wrapper"> 
+      
+        <section class="section-intro d-flex flex-column justify-content-center">           
+            <main class="main-content">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12 col-md-10 col-lg-7">
+                            <div class="avatar mb-3 mx-auto" style="width: 100px;">
+                                <img class="rounded-circle w-100" src="profile.jpg" alt="Sonu Pandit">
+                            </div>
+                            <h1>Hey, I'm Sonu Pandit</h1>
+                            <div class="content pt-2">
+                                <p>Software Developer with 7+ years of Web Development experience based in New Delhi, INDIA.</p>
+                            </div>
+                            <div class="btn-wrap mt-5">
+                                <button class="btn btn-outline-dark rounded-0">PROJECTS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-icons d-flex align-items-center justify-content-center mt-5">
+                        <a href="" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </main>
+        </section>    
+        <section class="section-portfolio">
+            <div class="container text-center">
+                <h1>Some projects I've Worked On</h1>
+            </div>
+        </section>    
+        <footer class="main-footer text-center px-3 py-4 bg-gray">
+           &copy; Lorem Ipsum 2022
+        </footer>
+    </div>
+</body>
+</html>

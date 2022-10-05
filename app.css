@@ -1,0 +1,75 @@
+h1,h2,h3{
+    font-weight: 200;
+}
+
+h1{
+    font-size: 48px;
+    background: rgb(34,193,195);
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn{
+    color: #333;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 7px 40px;
+    border-width: 2px;
+
+}
+
+/* *{
+    color: #fff !important;
+} */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    position: relative;  
+    overflow: hidden;
+    overflow-y: auto;     
+}
+.wrapper{
+    position: relative;
+}
+.main-header{
+    padding: 20px 0;
+    /* color: #f0f0f0; */
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+
+.bg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url(confetti.svg);  
+    background-size: 90% auto;
+}
+
+.content{
+    font-size: 18px;
+}
+
+.section-intro{
+    min-height: 100vh;
+    color: #333;
+    /* padding-top: 70px; */
+    /* background-image: url(./bg.jpg); */
+    background-size: cover;
+    background-position: center;
+}
+
+.social-icons a{
+    margin: 0 15px;
+    color: #333;
+    font-size: 20px;
+}
