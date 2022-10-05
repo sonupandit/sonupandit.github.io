@@ -11,13 +11,18 @@ h1{
 }
 
 .btn{
-    color: #333;
-    letter-spacing: 0.1em;
+   
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
     padding: 7px 40px;
     border-width: 2px;
+    min-width: 190px;
+}
 
+.btn-outline-dark{
+    background-color: transparent !important;
+    color: #333 !important;
 }
 
 /* *{
@@ -26,7 +31,7 @@ h1{
 
 body{
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    color: #484848;
     position: relative;  
     overflow: hidden;
     overflow-y: auto;     
@@ -72,4 +77,13 @@ body{
     margin: 0 15px;
     color: #333;
     font-size: 20px;
+}
+
+.projects li + li{
+  margin-top: 5px;
+}
+
+.projects a{
+   color: #3476d6;
+   text-decoration: none;
 }
